@@ -1,4 +1,4 @@
-package com..zeroserver {
+package com.zeroserver {
 	import com.zero.server.core.AllReport;
 	import com.zero.server.core.IRouter;
 	import com.zero.server.core.IServer;
