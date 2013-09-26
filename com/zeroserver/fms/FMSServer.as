@@ -4,8 +4,8 @@ package com.zeroserver.fms {
 	import flash.events.NetStatusEvent;
 	import flash.net.NetConnection;
 	import flash.net.Socket;
-	import com.zero.server.core.IRouter;
-	import com.zero.server.core.IServer;
+	import com.zeroserver.core.IRouter;
+	import com.zeroserver.core.IServer;
 	/**
 	 * ...
 	 * @author 蓝面包

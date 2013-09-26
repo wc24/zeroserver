@@ -1,5 +1,5 @@
 ﻿package com.zeroserver.fms {
-	import com.zero.server.core.IReport;
+	import com.zeroserver.core.IReport;
 	public interface IFmsReport extends IReport {
 	}
 }

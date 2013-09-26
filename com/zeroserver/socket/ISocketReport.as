@@ -1,6 +1,6 @@
 package com.zeroserver.socket {
 	import flash.utils.ByteArray;
-	import com.zero.server.core.IReport;
+	import com.zeroserver.core.IReport;
 	public interface ISocketReport extends IReport {
 		function set byteArray(value:ByteArray):void
 		function get byteArray():ByteArray

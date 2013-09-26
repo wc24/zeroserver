@@ -1,8 +1,8 @@
 package com.zeroserver {
-	import com.zero.server.core.AllReport;
-	import com.zero.server.core.IRouter;
-	import com.zero.server.core.IServer;
-	import com.zero.server.core.Transceiver;
+	import com.zeroserver.core.AllReport;
+	import com.zeroserver.core.IRouter;
+	import com.zeroserver.core.IServer;
+	import com.zeroserver.core.Transceiver;
 	
 	public class Sender extends Transceiver implements IRouter {
 		private var _server:IServer;

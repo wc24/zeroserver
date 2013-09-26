@@ -1,6 +1,6 @@
 package com.zeroserver.core {
 	import flash.events.IEventDispatcher;
-	[Event(name="report",type="com.zero.server.core.ReportEvent")]
+	[Event(name="report",type="com.zeroserver.core.ReportEvent")]
 	
 	public interface IServer extends IEventDispatcher {
 		function get connected():Boolean;

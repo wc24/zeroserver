@@ -1,5 +1,5 @@
 package com.zeroserver.remote {
-	import com.zero.server.core.IReport;
+	import com.zeroserver.core.IReport;
 	/**
 	 * ...
 	 * @author 蓝面包

@@ -1,11 +1,11 @@
 package com.zeroserver {
-	import com.zero.server.core.IReport;
-	import com.zero.server.core.IRouter;
-	import com.zero.server.core.IServer;
-	import com.zero.server.core.ReceiverEvent;
-	import com.zero.server.core.ReportEvent;
-	import com.zero.server.core.Transceiver;
-	[Event(name="receiver",type="com.zero.server.core.ReceiverEvent")]
+	import com.zeroserver.core.IReport;
+	import com.zeroserver.core.IRouter;
+	import com.zeroserver.core.IServer;
+	import com.zeroserver.core.ReceiverEvent;
+	import com.zeroserver.core.ReportEvent;
+	import com.zeroserver.core.Transceiver;
+	[Event(name="receiver",type="com.zeroserver.core.ReceiverEvent")]
 	
 	public class Receiver extends Transceiver implements IRouter {
 		private var _server:IServer;

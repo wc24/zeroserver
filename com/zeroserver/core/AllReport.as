@@ -1,8 +1,8 @@
 package com.zeroserver.core {
 	import flash.utils.ByteArray;
-	import com.zero.server.fms.IFmsReport;
-	import com.zero.server.remote.IRemoteReport;
-	import com.zero.server.socket.ISocketReport;
+	import com.zeroserver.fms.IFmsReport;
+	import com.zeroserver.remote.IRemoteReport;
+	import com.zeroserver.socket.ISocketReport;
 	
 	public class AllReport implements ISocketReport, IRemoteReport, IFmsReport {
 		private var _command:String;

@@ -1,6 +1,6 @@
 package com.zeroserver.socket {
-	import com.zero.server.Receiver;
-	import com.zero.server.Sender;
+	import com.zeroserver.Receiver;
+	import com.zeroserver.Sender;
 	
 	public interface IByteArrayParse {
 		function encode(sender:Sender):void;

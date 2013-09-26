@@ -1,6 +1,6 @@
 package com.zeroserver.core {
 	import flash.events.Event;
-	import com.zero.server.Receiver;
+	import com.zeroserver.Receiver;
 	
 	/**
 	 * ...

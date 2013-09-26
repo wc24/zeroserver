@@ -1,6 +1,6 @@
 package com.zeroserver.socket {
 	import flash.utils.ByteArray;
-	import com.zero.server.socket.ISocketReport;
+	import com.zeroserver.socket.ISocketReport;
 	
 	public class SocketReport implements ISocketReport {
 		private var _command:String;
@@ -15,7 +15,7 @@ package com.zeroserver.socket {
 		}
 		
 		public function toString():String {
-			return "[" + _className + " command=\"" + _command + "\" sign=" + _sign + " packetSize=" + _packetSize + " argument=" + JSON.stringify(_argument) + "]" + " byteArray=" + byteArrayToString(_byteArray);
+			return "[" + _className + " command=\"" + _command + "\" sign=" + _sign + " packetSize=" + _packetSize + " argument=" + JSON.stringify(_argument) + " byteArray=" + byteArrayToString(_byteArray) + "]";
 		}
 		
 		public function byteArrayToString(byteArray:ByteArray):String {

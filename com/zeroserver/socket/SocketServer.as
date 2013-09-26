@@ -1,14 +1,14 @@
 package com.zeroserver.socket {
 	import flash.events.ProgressEvent;
 	import flash.net.Socket;
-	import com.zero.server.core.IReport;
-	import com.zero.server.core.IRouter;
-	import com.zero.server.core.ReportEvent;
-	import com.zero.server.core.ZeroServerErrorCode;
+	import com.zeroserver.core.IReport;
+	import com.zeroserver.core.IRouter;
+	import com.zeroserver.core.ReportEvent;
+	import com.zeroserver.core.ZeroServerErrorCode;
 	/**
 	 * socket与报体的转换
 	 */
-	[Event(name="report",type="com.zero.server.core.ReportEvent")]
+	[Event(name="report",type="com.zeroserver.core.ReportEvent")]
 	
 	public class SocketServer extends Socket implements ISocketServer {
 		private var _packetParse:IPacketParse;
