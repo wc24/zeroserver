@@ -42,8 +42,8 @@ package com.zeroserver.socket {
 			var report:ISocketReport = router.report as ISocketReport
 			if (report == null) {
 				throw(ZeroServerErrorCode.NO_REPORT)
-			} else if (report.byteArray == null || report.byteArray.length == 0) {
-				throw(ZeroServerErrorCode.NO_PACK_DATA)
+			//} else if (report.byteArray == null || report.byteArray.length == 0) {
+			//	throw(ZeroServerErrorCode.NO_PACK_DATA)
 			} else if (report.command == "" && report.sign == 0) {
 				throw(ZeroServerErrorCode.NO_COMMAND)
 			} else {

@@ -14,19 +14,15 @@ package com.zeroserver {
 			_server = server;
 			_command = command;
 			_sign = sign;
-			//_report = new AllReport();
-			//report.command = _command;
-			//report.sign = _sign;
 			_className = "Sender"
+			report = server.getReport();
 		}
 		
 		public function call(... arg):void {
 			report.argument = arg;
 			report.command = _command;
 			report.sign = _sign;
-			used()	//_report = new AllReport();
-			//report.command = _command;
-			//report.sign = _sign;
+			used();
 			_server.send(this);
 		}
 		
