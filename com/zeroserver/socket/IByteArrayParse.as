@@ -3,7 +3,7 @@ package com.zeroserver.socket {
 	import com.zeroserver.Sender;
 	
 	public interface IByteArrayParse {
-		function encode(sender:Sender):void;
-		function decode(receiver:Receiver):void;
+		function encode(socketReport:ISocketReport):void;
+		function decode(socketReport:ISocketReport):void;
 	}
 }
