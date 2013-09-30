@@ -5,8 +5,5 @@ package com.zeroserver.socket {
 	
 	public interface ISocketServer extends IServer {
 		function set packetParse(value:IPacketParse):void;
-		
-		
-		//function set byteArrayParse(value:IByteArrayParse):void;
 	}
 }

@@ -14,9 +14,11 @@ package com.zeroserver.socket {
 		private var _packetParse:IPacketParse;
 		private var receiverPool:Object;
 		private var report:SocketReport;
+		private var _byteArrayParse:IByteArrayParse;
 		
-		public function SocketServer(packetParse:IPacketParse) {
+		public function SocketServer(packetParse:IPacketParse, byteArrayParse:IByteArrayParse = null) {
 			_packetParse = packetParse;
+			_byteArrayParse = byteArrayParse;
 			receiverPool = new Object();
 			report = new SocketReport()
 			if (_packetParse == null) {
@@ -28,6 +30,9 @@ package com.zeroserver.socket {
 		private function socketDataHd(e:ProgressEvent):void {
 			_packetParse.decode(this, report);
 			while (report.byteArray != null) {
+				if (_byteArrayParse != null) {
+					_byteArrayParse.decode(report);
+				}
 				dispatchEvent(new ReportEvent(ReportEvent.REPORT, report));
 				report = new SocketReport()
 				_packetParse.decode(this, report);
@@ -38,16 +43,17 @@ package com.zeroserver.socket {
 			return new SocketReport();
 		}
 		
-		public function send(router:IRouter):void {
-			var report:ISocketReport = router.report as ISocketReport
-			if (report == null) {
+		public function send(report:IReport):void {
+			var socketReport:ISocketReport = report as ISocketReport
+			if (socketReport == null) {
 				throw(ZeroServerErrorCode.NO_REPORT)
-			//} else if (report.byteArray == null || report.byteArray.length == 0) {
-			//	throw(ZeroServerErrorCode.NO_PACK_DATA)
-			} else if (report.command == "" && report.sign == 0) {
+			} else if (socketReport.command == "" && socketReport.sign == 0) {
 				throw(ZeroServerErrorCode.NO_COMMAND)
 			} else {
-				_packetParse.encode(this, report)
+				if (_byteArrayParse != null) {
+					_byteArrayParse.encode(socketReport);
+				}
+				_packetParse.encode(this, socketReport)
 			}
 		}
 		

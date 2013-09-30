@@ -15,7 +15,6 @@ package com.zeroserver {
 		public function Receiver(server:IServer, command:String, sign:int = 0) {
 			super(_server)
 			_sign = sign;
-			_className = "Receiver"
 			_command = command;
 			_server = server;
 			_server.addEventListener(ReportEvent.REPORT, server_report);
@@ -31,7 +30,7 @@ package com.zeroserver {
 		
 		public function receive(report:IReport):void {
 			this.report = report;
-			dispatchEvent(new ReceiverEvent(ReceiverEvent.RECEIVER, this));
+			dispatchEvent(new ReceiverEvent(ReceiverEvent.RECEIV, this));
 		}
 		
 		public function get server():IServer {

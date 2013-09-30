@@ -4,13 +4,11 @@ package com.zeroserver.core {
 	
 	public class Transceiver extends EventDispatcher {
 		protected var _report:IReport;
-		protected var _className:String;
 		protected var _usage:uint
 		protected var _intact:Boolean
 		
 		public function Transceiver(target:IEventDispatcher) {
 			super(target);
-			_className = "Transceiver"
 		}
 		
 		public function used():void {
@@ -34,7 +32,8 @@ package com.zeroserver.core {
 		}
 		
 		override public function toString():String {
-			return "[" + _className + " usage=" + _usage + " intact=" + _intact + " report=" + _report + "]";
+			var string:String = String(this["constructor"]).slice(7, -1);
+			return string + " usage=" + _usage + " intact=" + _intact + " report=" + _report + "]";
 		}
 	}
 }

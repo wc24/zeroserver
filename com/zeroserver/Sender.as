@@ -1,8 +1,9 @@
 package com.zeroserver {
-	import com.zeroserver.core.AllReport;
 	import com.zeroserver.core.IRouter;
 	import com.zeroserver.core.IServer;
+	import com.zeroserver.core.SenderEvent;
 	import com.zeroserver.core.Transceiver;
+	[Event(name="send",type="com.zeroserver.core.SenderEvent")]
 	
 	public class Sender extends Transceiver implements IRouter {
 		private var _server:IServer;
@@ -14,16 +15,20 @@ package com.zeroserver {
 			_server = server;
 			_command = command;
 			_sign = sign;
-			_className = "Sender"
 			report = server.getReport();
 		}
 		
-		public function call(... arg):void {
-			report.argument = arg;
+		public function send(sendData:Object):void {
+			report.argument = sendData;
 			report.command = _command;
 			report.sign = _sign;
 			used();
-			_server.send(this);
+			_server.send(this.report);
+			dispatchEvent(new SenderEvent(SenderEvent.SEND, this));
+		}
+		
+		public function call(... arg):void {
+			send(arg);
 		}
 		
 		public function get server():IServer {

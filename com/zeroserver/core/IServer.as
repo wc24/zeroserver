@@ -6,7 +6,7 @@ package com.zeroserver.core {
 		function get connected():Boolean;
 		function get timeout():uint;
 		function set timeout(value:uint):void;
-		function send(router:IRouter):void
+		function send(report:IReport):void;
 		function getReport():IReport;
 	}
 }
