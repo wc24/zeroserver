@@ -1,10 +1,9 @@
 package com.zeroserver.socket {
-	import flash.events.ProgressEvent;
-	import flash.net.Socket;
 	import com.zeroserver.core.IReport;
-	import com.zeroserver.core.IRouter;
 	import com.zeroserver.core.ReportEvent;
 	import com.zeroserver.core.ZeroServerErrorCode;
+	import flash.events.ProgressEvent;
+	import flash.net.Socket;
 	/**
 	 * socket与报体的转换
 	 */
