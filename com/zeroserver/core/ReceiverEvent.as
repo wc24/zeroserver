@@ -7,7 +7,7 @@ package com.zeroserver.core {
 	 * @author 蓝面包
 	 */
 	public class ReceiverEvent extends Event {
-		static public const RECEIV:String = "receiv";
+		static public const RECEIVE:String = "receive";
 		private var _receiver:Receiver;
 		
 		public function ReceiverEvent(type:String, receiver:Receiver, bubbles:Boolean = false, cancelable:Boolean = false) {

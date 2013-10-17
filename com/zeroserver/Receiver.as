@@ -5,7 +5,7 @@ package com.zeroserver {
 	import com.zeroserver.core.ReceiverEvent;
 	import com.zeroserver.core.ReportEvent;
 	import com.zeroserver.core.Transceiver;
-	[Event(name="receiver",type="com.zeroserver.core.ReceiverEvent")]
+	[Event(name="receive",type="com.zeroserver.core.ReceiverEvent")]
 	
 	public class Receiver extends Transceiver implements IRouter {
 		private var _server:IServer;
@@ -30,7 +30,7 @@ package com.zeroserver {
 		
 		public function receive(report:IReport):void {
 			this.report = report;
-			dispatchEvent(new ReceiverEvent(ReceiverEvent.RECEIV, this));
+			dispatchEvent(new ReceiverEvent(ReceiverEvent.RECEIVE, this));
 		}
 		
 		public function get server():IServer {
