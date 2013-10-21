@@ -33,7 +33,7 @@ package com.zeroserver.core {
 		
 		override public function toString():String {
 			var string:String = String(this["constructor"]).slice(7, -1);
-			return string + " usage=" + _usage + " intact=" + _intact + " report=" + _report + "]";
+			return "["+string + " usage=" + _usage + " intact=" + _intact + " report=" + _report + "]";
 		}
 	}
 }
